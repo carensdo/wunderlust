@@ -1,0 +1,220 @@
+/*Cameron Arensdorf*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+@import url('https://fonts.googleapis.com/css2?family=Molle&family=Montserrat&display=swap');
+
+:root{
+    --yellow: #F6D64A;
+    --teal: #55BCD5;
+    --purple: #9B26B0;
+    --blue: #499BD2;
+    --dark-grey: #222222;
+    --light-grey: #EAEAEA;
+    --white: #FFFFFF;
+    --black: #000000;
+  --fonts: Montserrat, sans-serif;
+
+}
+body {
+	line-height: 1;
+
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+#skip
+    {
+        position:absolute;
+        left:-10000px;
+        top:auto;
+        width:1px;
+        height:1px;
+        overflow:hidden;
+        }
+         
+        #skip a:focus
+        {
+        position:static;
+        width:auto;
+        height:auto;
+        }
+header{
+  background-image: linear-gradient(#55BCD5,white);
+display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+#logo{
+  grid-column-start: 1;
+}
+#menu-toggle{
+  grid-column-start: 2;
+}
+h1{
+grid-row-start: 2;
+}
+header p{
+ grid-row-start: 3;
+}
+.sr-only {
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+ 
+.sr-only a:focus {
+position:static;
+width:auto;
+height:auto;
+}
+
+
+#menu-toggle {
+  display: block;
+  position: relative;
+  left: 250px;  
+  z-index: 1;  
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  
+}
+#toggle{
+  background-color: #F6D64A;
+}
+
+
+#menu-toggle a {
+  text-decoration: none;
+  color: #222222;
+  -webkit-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  background-color: #F6D64A;
+}
+
+#menu-toggle a:hover {
+  color: #ffffff;
+}
+
+
+/* The hamburger button hidden inside an input element */
+#menu-toggle input {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: -7px;
+  left: -150px;  
+  padding: 0;
+  cursor: pointer;  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */  
+  -webkit-touch-callout: none;
+}
+
+#menu-toggle label {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+#menu-toggle label span {
+  display: none;
+}
+
+/* 
+ * Change the color of the hamburger when toggled
+ */
+#menu-toggle input:checked + label div {
+  background: #ffffff;
+}
+
+/*
+ * Use absolute positioning to place the menu off-screen
+ */
+ul {
+  position: absolute;
+  width: 100px;
+  margin: -100px 0 30 -100px;
+  padding: 50px;
+  padding-top: 70px;
+  background: #55BCD5;
+  list-style-type: none;
+  /* Hide the menu off-screen to the left */
+  right: -100%;
+  -webkit-transition: left 0.3s ease;
+  -o-transition: left 0.3s ease;
+  transition: left 0.3s ease; 
+}
+
+.active li {
+  padding: 10px 0;
+  font-size: 22px;
+  color: #FFFFFF;
+}
+
+/*
+ * Slide the menu in from left when the input is checked
+ */
+#menu-toggle input:checked ~ ul {
+  left: 0;
+}
+h4, p, q, small, nav, button, form{
+  font-family: 'Montserrat';
+}
+h1, h2, h3{
+  font-family: 'Molle';
+}
+@media screen and (min-width: 500px){
+ header{ 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+   
+}
+}
